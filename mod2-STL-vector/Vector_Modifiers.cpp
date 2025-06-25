@@ -3,8 +3,8 @@ using namespace std;
 
 int main()
 {
-    vector<int> v = {1,2,3,4,5};
-    vector<int> v3 = {100, 200, 300};
+    vector<int> v = {1, 2, 3, 4, 5};
+    // vector<int> v3 = {100, 200, 300};
 
     // vector<int> v2;
 
@@ -20,14 +20,31 @@ int main()
     // v.insert(v.begin()+2, 100);
     // v.insert(v.begin()+2, v3.begin(), v3.end());
 
-
     // v.erase(v.begin()+2);
 
-    v.erase(v.begin()+1, v.end()-1);
+    // v.erase(v.begin()+1, v.end()-1);
 
-    for(int x: v){ // ranged based for loop
-        cout << x << " ";
-    }
-    
+    // replace(v.begin(), v.end(), 2, 100);
+
+    // vector<int>::iterator it = find(v.begin(), v.end(), 2);
+
+    auto it = find(v.begin(), v.end(), 2);
+
+    // if (it == v.end())
+    // {
+    //     cout << "Not Found" << endl;
+    // }
+    // else
+    // {
+    //     cout << "Found";
+    // };
+
+    cout << *it << endl;
+
+    // for (int x : v)
+    // { // ranged based for loop
+    //     cout << x << " ";
+    // }
+
     return 0;
 }
