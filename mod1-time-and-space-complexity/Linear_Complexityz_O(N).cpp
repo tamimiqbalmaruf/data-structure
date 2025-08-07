@@ -8,11 +8,8 @@ int main()
 
     for (int i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= n; j*=2)
-        {
-            cout << "Hello" << endl;
-        }
+        cout << i << " ";
     }
-
+    
     return 0;
 }

@@ -15,7 +15,6 @@ int main()
     // }
 
     // using formula
-
     sum = (n*(n+1))/2;
 
     cout << sum;
