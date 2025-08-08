@@ -6,14 +6,14 @@ int main()
     int n, q;
     cin >> n >> q;
 
-    int a[n];
+    vector<int> a(n);
 
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
 
-    sort(a, a + n);
+    sort(a.begin(), a.end());
 
     while (q--)
     {
@@ -21,10 +21,9 @@ int main()
         cin >> x;
         int flag = 0;
 
-        int l = 0;
-        int r = n - 1;
+        int l = 0, r = n - 1;
 
-        while (l<=r)
+        while (l <= r)
         {
 
             int mid = (l + r) / 2;
@@ -44,14 +43,7 @@ int main()
             }
         }
 
-        if (flag)
-        {
-            cout << "found" << endl;
-        }
-        else
-        {
-            cout << "not found" << endl;
-        }
+        flag ? cout << "found" << endl : cout << "not found" << endl;
     }
 
     return 0;

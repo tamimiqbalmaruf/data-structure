@@ -14,7 +14,6 @@ int main()
     }
 
     vector<long long int> pre(n + 1);
-
     pre[1] = v[1];
 
     for (int i = 2; i <= n; i++)
@@ -29,13 +28,13 @@ int main()
 
         long long int sum = 0;
 
-        if (l == 1)
+        if (l > 1)
         {
-            sum = pre[r];
+            sum = pre[r] - pre[l - 1];
         }
         else
         {
-            sum = pre[r] - pre[l - 1];
+            sum = pre[r];
         }
 
         cout << sum << endl;
