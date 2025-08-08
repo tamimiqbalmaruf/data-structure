@@ -13,9 +13,10 @@ int main()
         cin >> v[i]; // getline(cin, v[i]) if I use space and should use cin.ignore()
     }
 
-    for(string s : v){
-        cout <<s << endl;
+    for (string s : v)
+    {
+        cout << s << endl;
     }
-    
+
     return 0;
 }

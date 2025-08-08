@@ -6,21 +6,14 @@ int main()
     int n;
     cin >> n;
 
-    // vector<int> v(n);
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     cin >> v[i];
-    // }
-
-    vector<int> v;
+    vector<int> v(n);
 
     for (int i = 0; i < n; i++)
     {
-        int x;
-        cin >> x;
-        v.push_back(x);
+        cin >> v[i];
     }
+
+    reverse(v.begin(), v.end());
 
     for (int x : v)
     {
