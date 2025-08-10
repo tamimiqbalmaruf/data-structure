@@ -25,15 +25,13 @@ int main()
     a->next = b;
     b->next = c;
 
-    Node* temp = head;
+    Node *temp = head;
 
     while (temp != NULL)
     {
         cout << temp->val << endl;
-
         temp = temp->next;
     }
-    
 
     return 0;
 }

@@ -11,7 +11,7 @@ public:
     {
         this->val = val;
         this->next = NULL;
-    };
+    }
 };
 
 int main()
@@ -24,5 +24,6 @@ int main()
     cout << a.val << endl;
     cout << a.next->val << endl;
     cout << a.next->next->val << endl;
+
     return 0;
 }

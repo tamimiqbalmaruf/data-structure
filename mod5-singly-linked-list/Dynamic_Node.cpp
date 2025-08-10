@@ -16,6 +16,7 @@ public:
 
 int main()
 {
+
     Node *head = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
@@ -25,6 +26,7 @@ int main()
 
     cout << head->val << endl;
     cout << head->next->val << endl;
+    cout << head->next->next->val << endl;
 
     return 0;
 }
