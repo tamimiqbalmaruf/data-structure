@@ -14,23 +14,19 @@ public:
     };
 };
 
-void insert_at_any_pos(Node *&head, int idx, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
 
-    Node *temp = head;
-
-    while (--idx)
+    if (head == NULL) // corner case
     {
-        temp = temp->next;
-        
-        if(temp == NULL){ // corner case
-            return;
-        }
+        head = newNode;
+        tail = newNode;
+        return;
     }
 
-    newNode->next = temp->next;
-    temp->next = newNode;
+    tail->next = newNode;
+    tail = newNode;
 }
 
 void print_linked_list(Node *head)
@@ -48,12 +44,12 @@ int main()
 {
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(30);
+    Node *tail = new Node(30);
 
     head->next = a;
-    a->next = b;
+    a->next = tail;
 
-    insert_at_any_pos(head, 2, 100);
+    insert_at_tail(head, tail, 100);
     print_linked_list(head);
 
     return 0;
