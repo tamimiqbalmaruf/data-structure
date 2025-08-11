@@ -27,18 +27,7 @@ void print_forward(Node *head)
     }
 }
 
-void print_backward(Node *tail)
-{
-    Node *temp = tail;
-
-    while (temp != NULL)
-    {
-        cout << temp->val << endl;
-        temp = temp->prev;
-    }
-}
-
-void insert_at_head(Node *&head, Node *&tail, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
 
@@ -49,10 +38,10 @@ void insert_at_head(Node *&head, Node *&tail, int val)
         return;
     }
 
-    newNode->next = head;
-    head->prev = newNode;
+    tail->next = newNode;
+    newNode->prev = tail;
 
-    head = newNode;
+    tail = newNode;
 }
 
 int main()
@@ -66,9 +55,8 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    insert_at_head(head, tail, 100);
+    insert_at_tail(head, tail, 100);
     print_forward(head);
-    // print_backward(tail);
 
     return 0;
 }
