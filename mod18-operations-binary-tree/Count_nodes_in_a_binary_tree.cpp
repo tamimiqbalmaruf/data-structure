@@ -16,32 +16,6 @@ public:
     };
 };
 
-void level_order(Node *root)
-{
-    if (root == NULL)
-    {
-        cout << "No Tree" << endl;
-        return;
-    }
-
-    queue<Node *> q;
-    q.push(root);
-
-    while (!q.empty())
-    {
-        Node *f = q.front();
-        q.pop();
-
-        cout << f->val << " ";
-
-        if (f->left)
-            q.push(f->left);
-
-        if (f->right)
-            q.push(f->right);
-    }
-}
-
 Node *input_tree()
 {
     int val;
@@ -91,10 +65,21 @@ Node *input_tree()
     return root;
 }
 
+int countNodes(Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    int l = countNodes(root->left);
+    int r = countNodes(root->right);
+
+    return l + r + 1;
+}
+
 int main()
 {
     Node *root = input_tree();
-    level_order(root);
+    cout << countNodes(root) << endl;
 
     return 0;
 }
