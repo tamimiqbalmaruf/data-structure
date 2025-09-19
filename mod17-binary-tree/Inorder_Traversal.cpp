@@ -16,6 +16,15 @@ public:
     };
 };
 
+void inorder(Node *root)
+{
+    if (root == NULL)
+        return;
+    inorder(root->left);
+    cout << root->val << " ";
+    inorder(root->right);
+}
+
 int main()
 {
     Node *root = new Node(10);
@@ -30,6 +39,8 @@ int main()
     a->left = c;
     b->left = d;
     b->right = e;
+
+    inorder(root);
 
     return 0;
 }
